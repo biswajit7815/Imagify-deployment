@@ -1,104 +1,176 @@
-# Imagify
+# 🚀 Imagify – Production-Ready AI Image Platform
 
-## Live Demo
-[Click here to view the live demo](https://imagify-shozab.vercel.app/) <!-- Replace # with the actual live demo link -->
-
-## Description
-Imagify is an AI-powered image generation SaaS web application built with the MERN stack. It uses the Clipdrop API to generate high-quality images and includes a secure login/signup system.
+<p align="center">
+  <b>End-to-End production level  Dockerized and Docker-compose-yml MERN Application with Nginx Reverse Proxy & AWS Deployment</b>
+</p>
 
 ---
 
-## Features
-- AI-based image generation using the Clipdrop API.
-- User authentication system with login and signup functionality.
-- Clean and modern user interface.
+## 🌍 Live System
+
+🔗 http://3.110.86.139
 
 ---
 
-## Installation Instructions
+## 🧠 System Architecture
 
-1. Clone the repository:
-```bash
-git clone https://github.com/shozabali06/Imagify.git
-```
-
-2. Navigate to the project directory:
-```bash
-cd Imagify
-```
-
-### Server Setup
-
-3. Navigate to the server folder:
-```bash
-cd server
-```
-
-4. Install dependencies:
-```bash
-npm install
-```
-
-5. Configure environment variables:
-   Create a `.env` file in the `server` folder and add the following:
-   ```env
-   MONGODB_URI=<your-mongodb-connection-string>
-   JWT_SECRET=<your-jwt-secret>
-   CLIPDROP_API=<your-clipdrop-api-key>
-   ```
-
-6. Start the server:
-```bash
-npm run server
-```
-
-### Client Setup
-
-7. Navigate to the client folder:
-```bash
-cd client
-```
-
-8. Install dependencies:
-```bash
-npm install
-```
-
-9. Configure environment variables:
-   Create a `.env` file in the `client` folder and add the following:
-   ```env
-   VITE_BACKEND_URL=<url-for-server-side>
-   ```
-
-10. Start the client:
-```bash
-npm run dev
+```id="arch123"
+Client (React + Vite)
+        │
+        ▼
+   Nginx (Reverse Proxy)
+        │
+        ▼
+Backend (Node.js + Express API)
+        │
+        ▼
+ MongoDB (Database)
 ```
 
 ---
 
-## Commands Summary
+## ⚙️ DevOps Highlights
 
-### Server Commands
-- **Install dependencies:** `npm install`
-- **Run the server:** `npm run server`
-
-### Client Commands
-- **Install dependencies:** `npm install`
-- **Run the client:** `npm run dev`
-
----
-
-## Environment Variables Summary
-
-### Server Folder
-- `MONGODB_URI`: MongoDB connection string.
-- `JWT_SECRET`: Secret key for JSON Web Token.
-- `CLIPDROP_API`: API key for the Clipdrop API.
-
-### Client Folder
-- `VITE_BACKEND_URL`: URL of the server application.
+* 🐳 **Containerized Architecture (Docker)**
+* 🔄 **Multi-Service Orchestration (Docker Compose)**
+* 🌐 **Nginx Reverse Proxy (Production Routing)**
+* 🔐 **Environment-based Configuration (.env)**
+* ⚡ **Zero-downtime Deployment Ready**
+* 📦 **Isolated Services (Frontend, Backend, DB)**
+* 🔗 **Internal Docker Networking (Service Discovery)**
 
 ---
 
-Feel free to reach out for further assistance or feature suggestions!
+## 🏗️ Infrastructure Setup
+
+| Layer            | Technology        |
+| ---------------- | ----------------- |
+| Compute          | AWS EC2           |
+| Reverse Proxy    | Nginx             |
+| Containerization | Docker            |
+| Orchestration    | Docker Compose    |
+| Backend          | Node.js + Express |
+| Database         | MongoDB           |
+| Frontend         | React (Vite)      |
+
+---
+
+## 📂 Project Structure
+
+```id="struct456"
+imagify/
+│
+├── client/              # Frontend (React)
+├── server/              # Backend API
+├── nginx/               # Reverse proxy config
+├── docker-compose.yml   # Multi-container setup
+└── .env                 # Environment variables
+```
+
+---
+
+## 🔄 Service Communication Flow
+
+```id="flow789"
+User Request
+    ↓
+Nginx (Port 80)
+    ↓
+Route /api → Backend Container
+    ↓
+Business Logic Execution
+    ↓
+MongoDB (Data Layer)
+    ↓
+Response → Nginx → Client
+```
+
+---
+
+
+
+---
+
+## 🔐 Environment Configuration
+
+```env id="env999"
+MONGO_URI=mongodb://user:pass@mongodb:27017/db
+JWT_SECRET=your_secret
+CLIPDROP_API=your_api_key
+```
+
+---
+
+## 🚀 Deployment Steps
+
+### 1️⃣ Clone Repository
+
+```bash id="cmd1"
+https://github.com/biswajit7815/Imagify-deployment.git
+cd imagify-deployment
+```
+
+### 2️⃣ Configure Environment
+
+```bash id="cmd2"
+nano .env
+```
+
+### 3️⃣ Build & Run Containers
+
+```bash id="cmd3"
+docker-compose up -d --build
+```
+
+---
+
+## 📡 API Gateway (Nginx)
+
+```nginx id="nginx001"
+location /api/ {
+    proxy_pass http://server:4000;
+}
+```
+
+---
+
+## 📊 Observability & Debugging
+
+* `docker ps` → container status
+* `docker logs <container>` → runtime logs
+* `docker exec` → container shell access
+* `curl` → API testing
+
+---
+
+## 🛡️ Security Considerations
+
+* 🔐 JWT Authentication
+* 🔒 Environment variables (no secrets in code)
+* 🚫 Direct DB exposure blocked
+* 🌐 Reverse proxy controlled access
+
+---
+
+## 🚀 Future Enhancements
+
+* 🔐 HTTPS (Let's Encrypt SSL)
+* 🔁 CI/CD Pipeline (GitHub Actions)
+* 📊 Monitoring (Prometheus + Grafana)
+* 📦 Kubernetes Migration
+* ⚡ Auto Scaling
+
+---
+
+## 👨‍💻 Author
+
+**Biswajit Behera**
+📧 [biswajitbehera1868@gmail.com](mailto:biswajitbehera1868@gmail.com)
+
+---
+
+## ⭐ DevOps Impact
+
+> Designed and deployed a scalable, containerized full-stack system with production-grade networking and reverse proxy architecture.
+
+---
